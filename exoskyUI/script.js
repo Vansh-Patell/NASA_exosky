@@ -196,7 +196,7 @@ window.onload = async function () {
 
 async function searchPlanet(planetName) {
   console.log("Searching for planet:", planetName);
-  const apiUrl = `https://exosky-eqaacuazcwazejev.canadacentral-01.azurewebsites.net/api/exoplanets?name=${planetName}`;
+  const apiUrl = `https://exosky-server-d7ghgdcwadgfead2.canadacentral-01.azurewebsites.net/api/exoplanets?name=${planetName}`;
 
   try {
     const response = await fetch(apiUrl);
@@ -218,7 +218,7 @@ async function searchPlanet(planetName) {
       openSkySimulation(planet.ra, planet.dec, planetName);
     }
 
-    // const scriptRunUrl = `https://exosky-eqaacuazcwazejev.canadacentral-01.azurewebsites.net/api/run-script`;
+    // const scriptRunUrl = `https://exosky-server-d7ghgdcwadgfead2.canadacentral-01.azurewebsites.net/api/run-script`;
     // const scriptResponse = await fetch(scriptRunUrl, {
     //   method: "POST",
     //   headers: {
@@ -254,7 +254,7 @@ function selectPlanet(planetName) {
 
 async function fetchAllPlanets() {
   const apiUrl =
-    "https://exosky-eqaacuazcwazejev.canadacentral-01.azurewebsites.net/api/all-planets";
+    "https://exosky-server-d7ghgdcwadgfead2.canadacentral-01.azurewebsites.net/api/all-planets";
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
@@ -305,7 +305,7 @@ function filterPlanets() {
 
 async function openSkySimulation(ra, dec, planetName) {
   // edit here
-  const url = `https://exosky-eqaacuazcwazejev.canadacentral-01.azurewebsites.net/3d-simulation?ra=${encodeURIComponent(
+  const url = `https://exosky-server-d7ghgdcwadgfead2.canadacentral-01.azurewebsites.net/3d-simulation?ra=${encodeURIComponent(
     ra
   )}&dec=${encodeURIComponent(dec)}
         &name=${encodeURIComponent(planetName)}`;
